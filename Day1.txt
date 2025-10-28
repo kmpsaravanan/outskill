@@ -29,6 +29,13 @@ https://www.swebench.com/
 
 https://snitchbench.t3.gg/
 
+https://medium.com/neo4j/building-knowledge-graphs-with-claude-and-neo4j-a-no-code-mcp-approach-830b99b0e35c
+https://neo4j.com/blog/developer/claude-converses-neo4j-via-mcp/
+http://localhost:6333/dashboard#/collections/grade4#quality
+https://github.com/qdrant/mcp-server-qdrant
+http://localhost:6333/dashboard#/welcome
+https://docs.google.com/document/d/1gWs48CD6ikpKLe1zvbFUbzPUqZN3aW5CgrGkGK7jL3o/edit?tab=t.0#heading=h.y8rfq7389g8h
+
 Here's a summary of the key points mentioned by Sidharth Sidharth during the session:
 
 Python Environment Setup:
@@ -90,3 +97,4 @@ from dotenv import load_dotenv
 load_dotenv()
 
 This allows you to store sensitive information like API keys without hardcoding them in your source code. The .env file should not be committed to version control systems like Git.
+
