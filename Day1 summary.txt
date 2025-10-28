@@ -1,0 +1,192 @@
+Session Summary
+Key Concepts Covered
+Chat Completion API
+
+The fundamental interface for interacting with LLMs
+Standard across the industry (OpenAI compatibility)
+Core components: model name and messages
+Model Training Paradigms
+
+Pre-training: Learning language patterns from massive datasets
+Post-training: Teaching models to be helpful and harmless (RLHF/RAIF)
+Fine-tuning: Specialized adjustments for specific behaviors
+Token-based Processing
+
+LLMs work with tokens, not words
+Autoregressive behavior: generating one token at a time
+Context window limitations
+Multi-turn Chat Format
+
+How LLMs maintain conversation context
+System prompts, user messages, assistant responses
+No actual "memory" - just context being passed back
+Probability & Temperature
+
+LLMs generate probabilistic outputs
+Temperature controls randomness/creativity
+Log probabilities show model confidence
+URLs & Resources Shared
+platform.openai.com (documentation)
+OpenAI Cookbook (https://cookbook.openai.com)
+artificialanalysis.ai (for model comparisons)
+Tools Demonstrated
+LM Studio (for running local models)
+Google AI Studio
+OpenRouter (for accessing multiple models)
+Hugging Face (model hosting)
+Questions & Responses
+Fine-tuning vs. RAG: Sidharth emphasized RAG as more practical for most use cases
+Small Language Models (SLMs): Discussion of distillation to create smaller models
+Model Evaluation: Importance of evals for measuring performance
+Handling Sensitive Data: PII masking techniques
+Scaling Laws: Relationship between model size, data, and compute
+Practical Advice
+Start with prompt engineering before considering fine-tuning
+Use RAG for custom data integration (99% of use cases)
+Consider fine-tuning only as a hobby or research project
+Always build evaluations to measure model performance
+
+Key Concepts Expanded in Detail
+Model Structure
+LLMs (Large Language Models): These are essentially collections of numbers (weights) arranged in specific architectures
+Tokens: Subword units that models process (sometimes whole words, often parts of words)
+Tokenization: The process of converting text into tokens that can be understood by the model
+Parameters: The numerical weights inside the model that are adjusted during training
+Training Paradigms
+Pre-training:
+
+Initial phase where model learns language from vast amounts of data
+Focus on next token prediction to understand language patterns
+Uses enormous datasets (internet-scale)
+Post-training:
+
+Teaching models to be helpful, harmless, and honest (HHH)
+Includes RLHF (Reinforcement Learning with Human Feedback)
+Focuses on question answering and appropriate behavior
+Fine-tuning:
+
+More specific adjustments for specialized tasks or behaviors
+Requires high-quality "golden" data samples (10,000+ recommended)
+Highly experimental with potential unexpected side effects
+Model Behavior
+Autoregressive: Models predict one token at a time, feeding previous outputs back in
+Log Probabilities: For each token prediction, models generate probability distributions
+Temperature: Controls randomness/creativity in outputs (typically 0-2 range)
+Max Tokens: Limits the length of model responses
+EOS (End of Sequence) Token: Special token that signals completion of an answer
+Chat Completion API
+Standard interface to interact with most LLM providers
+Originally created by OpenAI but now widely adopted
+Key components:
+Model name: Specifies which model to use
+Messages: Array containing conversation history with roles
+Roles: System, User, Assistant (defines who is speaking)
+Context Window
+Maximum number of tokens a model can process at once
+Determines how much conversation history can be maintained
+Models don't have "memory" - previous context must be explicitly provided
+Evaluation (Evals)
+Tests to measure
+
+
+Here are all the examples discussed during the session:
+
+Chat Completion API examples:
+
+Basic example: "What is the capital of France?" (Paris)
+Follow-up question: "Write 3 paragraphs about it"
+Example showing how models don't have memory but use conversation history
+Token and probability examples:
+
+"Twinkle, twinkle, little star" - showing how models predict tokens
+"The secret to success is..." - demonstrating different token probabilities
+Log probabilities visualization for different questions
+Temperature control examples:
+
+Setting temperature to different values (0, 0.5, 1, 1.5, 2)
+"Who are you?" question with different temperature settings
+Max token examples:
+
+"What is the capital of France?" with max tokens set to 5
+"Answer in one word" prompt combined with max tokens
+System prompt examples:
+
+"Speak like a pirate" system prompt with "How are you?" question
+"Speak like a 5-year-old child" system prompt with "How are you?" question
+Model knowledge cutoff examples:
+
+"Who is the president of USA?" showing how older models still say Joe Biden
+Multi-turn conversation examples:
+
+Multiple back-and-forth exchanges showing how conversation history is maintained
+Small language model examples:
+
+Gamma 70M model answering "What is the capital of France?"
+Math problem: "100 into 100" (correctly answered)
+Complex math: "659 minus 254 plus 1244" (incorrectly answered as 1659)
+Hindi in Roman script example showing limitations
+Evaluation examples:
+
+"How many Rs are there in strawberry?" as a microeval example
+Fine-tuning examples:
+
+Shakespeare text fine-tuning mentioned
+Code example showing emergent misalignment in models
+These examples were used to illustrate concepts like chat completion, token prediction, temperature control, model limitations, and evaluation techniques.
+
+Chat Completion Explained Step by Step
+Basic Structure: Chat Completion is an API standard that enables communication with language models through a multi-turn conversation format.
+
+Core Components:
+
+Model name: Specifies which model to use (e.g., GPT-5, Mistral, DeepSeek)
+Messages: A list containing the conversation history
+Message Types:
+
+System message: Initial instructions that set the model's behavior
+User message: Your input/prompt to the model
+Assistant message: The model's response
+Behind the Scenes Process:
+
+When you send a prompt, the entire conversation history is sent to the model
+The model predicts tokens (words/subwords) one by one in an autoregressive manner
+Each token is generated based on probabilities learned during training
+The process continues until a stop token is reached
+Key Parameters:
+
+Temperature: Controls randomness (0-2 range typically)
+Max output tokens: Limits response length
+Log probabilities: Shows model confidence for each token (when supported)
+Industry Standard:
+
+Originally created by OpenAI
+Now supported by most AI companies (Google, Anthropic, etc.)
+Often called "OpenAI compatibility" in documentation
+Memory Handling:
+
+Models have no built-in memory
+Conversation context is maintained by sending the entire chat history with each request
+Limited by context window size (maximum tokens the model can process)
+This standard allows you to interact with virtually any language model using consistent code, making it the foundation for building AI applications.
+
+Based on the context, the algorithms discussed in the session include:
+
+Autoregressive behavior - how LLMs predict tokens one by one
+Greedy decoding - selecting the token with highest probability
+Top-K and Top-P sampling strategies
+Distillation - transferring capabilities from larger "teacher" models to smaller "student" models
+Supervised Fine-Tuning (SFT) - mentioned in context of image models
+Reinforcement Learning (RL) - briefly mentioned when discussing training approaches
+The session primarily focused on Chat Completion API concepts and the underlying principles of how LLMs work, rather than detailed algorithm explanations.
+
+Based on the session described in the context, here are the recommended exercises:
+
+Practice using Chat Completion API - try implementing it with different models
+Experiment with multi-turn conversations to understand how context works
+Try different parameters like temperature and max tokens to see their effects
+Build simple evals (evaluations) to test model performance
+Read through the OpenAI documentation and cookbook for deeper understanding
+Test the same prompts across different models to compare their capabilities
+Practice prompt engineering with system prompts to change model behavior
+Experiment with log probabilities to understand model confidence
+The instructor specifically emphasized focusing on understanding Chat Completion API as the core takeaway from the session, as it's the universal method to communicate with LLMs.

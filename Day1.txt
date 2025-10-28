@@ -1,0 +1,99 @@
+PCBPS4505J
+316441056804
+
+0190479598
+
+608130125481
+316441056804
+
+
+kartik@outskill.com
+sham@outskill.com
+
+GIT token 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
+
+https://docs.google.com/document/d/1U-sOpmDY94drYkd_T1eOQUc84brpH1zwsvrlGBJ_AYU/edit?usp=sharing
+
+https://colab.research.google.com/drive/1m0JwSwdcbhsRFa6TBl36gCpvOjPrxtzg?usp=sharing
+
+
+https://colab.research.google.com/drive/1m0JwSwdcbhsRFa6TBl36gCpvOjPrxtzg?usp=sharing
+
+https://claude.ai/public/artifacts/ee75d9e2-3131-49a3-8a65-a1ac9c66a031
+
+https://artificialanalysis.ai/
+
+https://github.com/karpathy/nanochat
+
+https://app.sli.do/event/kDAKPeuti98BVy9Ne2qXUK
+
+https://platform.openai.com/docs/overview
+
+https://cookbook.openai.com/
+
+https://www.kaggle.com/datasets/hojjatk/mnist-dataset
+
+https://www.swebench.com/
+
+https://snitchbench.t3.gg/
+
+Here's a summary of the key points mentioned by Sidharth Sidharth during the session:
+
+Python Environment Setup:
+
+Explained the difference between system Python, user Python, and virtual environments
+Emphasized not to modify system Python on Unix/Mac systems
+Discussed the importance of checking the "Add Python to PATH" checkbox during Windows installation
+Virtual Environments:
+
+Explained why virtual environments are necessary (to isolate project dependencies)
+Demonstrated how to create virtual environments using python3 -m venv venv command
+Showed how to activate virtual environments on both Mac/Unix and Windows systems
+Explained that virtual environment activation is tied to the terminal window
+Package Management:
+
+Introduced pip as Python's package manager (similar to App Store/Play Store)
+Demonstrated installing packages like pandas, numpy, and openai
+Explained how to uninstall packages using pip
+Requirements.txt:
+
+Explained the importance of requirements.txt for sharing projects
+Showed how to generate requirements.txt using pip freeze > requirements.txt
+Demonstrated recreating environments using pip install -r requirements.txt
+Environment Variables and Secrets:
+
+Explained how to use .env files for storing environment variables and secrets
+Demonstrated loading environment variables using the python-dotenv package
+Git and GitHub:
+
+Briefly introduced version control concepts
+Recommended GitHub Desktop for beginners
+Explained not to include virtual environments in Git repositories
+AI Learning Tips:
+
+Suggested using AI to learn Python faster with prompts like "I come from X language, help me get started with Python"
+Recommended asking AI for line-by-line code explanations
+Demonstrated using Zoom AI Companion to summarize sessions and extract links
+Course Focus:
+
+Emphasized that the course will focus on generative AI concepts rather than Python basics
+Mentioned that free inference will be available through Hugging Face and other platforms
+The session was primarily focused on setting up Python environments and preparing students for the upcoming generative AI course modules.
+
+
+
+From me: can you add that to a txt file
+can you add that to a txt file
+13:08
+AI Companion Said:
+Yes, you can add the content to a .txt file. Based on the context, when working with Python virtual environments, you can save environment variables in a file named .env. This is a text file that stores your configuration and secrets (like API keys).
+
+To use it:
+
+Create a file named .env in your project directory
+Add your variables in the format VARIABLE_NAME=value
+Install the python-dotenv package: pip install python-dotenv
+In your Python code, load the variables:
+from dotenv import load_dotenv
+load_dotenv()
+This allows you to store sensitive information like API keys without hardcoding them in your source code. The .env file should not be committed to version control systems like Git.
