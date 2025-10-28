@@ -1,16 +1,8 @@
-PCBPS4505J
-316441056804
 
-0190479598
-
-608130125481
-316441056804
 
 
 kartik@outskill.com
 sham@outskill.com
-
-GIT token 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
 
 https://docs.google.com/document/d/1U-sOpmDY94drYkd_T1eOQUc84brpH1zwsvrlGBJ_AYU/edit?usp=sharing
 
@@ -96,4 +88,5 @@ Install the python-dotenv package: pip install python-dotenv
 In your Python code, load the variables:
 from dotenv import load_dotenv
 load_dotenv()
+
 This allows you to store sensitive information like API keys without hardcoding them in your source code. The .env file should not be committed to version control systems like Git.
